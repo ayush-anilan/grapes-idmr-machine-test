@@ -60,7 +60,7 @@ function Login() {
             }}
         >
             <div className="mx-auto flex min-h-[calc(100vh-3rem)] w-full max-w-6xl overflow-hidden rounded-3xl border border-indigo-100 bg-white/80 shadow-2xl shadow-indigo-100 backdrop-blur-sm">
-                <section className="relative hidden w-1/2 flex-col justify-between bg-gradient-to-br from-[#f7f8ff] via-[#eef2ff] to-[#f7f1ff] p-12 lg:flex">
+                <section className="relative hidden w-1/2 flex-col justify-between bg-linear-to-br from-[#f7f8ff] via-[#eef2ff] to-[#f7f1ff] p-12 lg:flex">
                     <div className="space-y-7">
                         <img src={Logo} alt="Grapes HMS logo" className="h-24 w-auto" />
                         <div className="space-y-3 text-slate-700">
@@ -77,7 +77,7 @@ function Login() {
                     </div>
                 </section>
 
-                <section className="flex w-full items-center bg-gradient-to-br from-[#8e7cf4] via-[#8572ef] to-[#755fe3] px-5 py-8 sm:px-10 lg:w-1/2">
+                <section className="flex w-full items-center bg-linear-to-br from-[#8e7cf4] via-[#8572ef] to-[#755fe3] px-5 py-8 sm:px-10 lg:w-1/2">
                     <div className="w-full rounded-2xl border border-white/25 bg-white/10 p-6 shadow-lg shadow-indigo-950/10 backdrop-blur-sm sm:p-8">
                         <div className="mb-8 space-y-2 text-white">
                             <img src={Logo} alt="Grapes HMS logo" className="h-14 w-auto lg:hidden" />

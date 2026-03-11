@@ -16,7 +16,7 @@ function Dashboard() {
 
   return (
     <div className="min-h-screen bg-[#030712] text-slate-100">
-      <div className="mx-auto flex min-h-screen max-w-[1920px] flex-col xl:flex-row">
+      <div className="mx-auto flex min-h-screen max-w-480 flex-col xl:flex-row">
         <DashboardSidebar liveMetrics={sidebarLiveMetrics} userName={userName} userRole="Administrator" />
 
         <main className="flex-1 px-4 py-4 sm:px-6 sm:py-6 xl:px-8 xl:py-6">

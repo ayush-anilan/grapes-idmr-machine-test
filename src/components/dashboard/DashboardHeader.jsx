@@ -35,7 +35,7 @@ export default function DashboardHeader({ title }) {
         />
         <button
           type="button"
-          className="inline-flex items-center gap-1 rounded-xl bg-gradient-to-r from-[#2f7dff] to-[#8d28de] px-4 py-2 text-sm font-bold text-white"
+          className="inline-flex items-center gap-1 rounded-xl bg-linear-to-r from-[#2f7dff] to-[#8d28de] px-4 py-2 text-sm font-bold text-white"
         >
           <SparklesIcon className="h-4 w-4" />
           <span>AI</span>
