@@ -21,18 +21,21 @@ const navItemClass =
 
 function LiveMetricCard({ metric }) {
   return (
-    <article className="rounded-2xl border border-[#4d6fa45c] bg-[#090f1d] p-4">
+    <article className="rounded-2xl border border-[#4d6fa45c] bg-[#090f1d] p-4 transition hover:border-[#4d6fa490]">
       <div className="flex items-start justify-between gap-4">
-        <div className="flex items-center gap-2 text-sm text-slate-400/95">
-          <metric.icon className="h-4 w-4" />
+        <div className="flex items-center gap-2 text-xs text-slate-400/95">
+          <metric.icon className="h-3.5 w-3.5" />
           <span>{metric.label}</span>
         </div>
-        <span className={metric.delta.startsWith("-") ? "text-red-500" : "text-emerald-400"}>
-          {metric.delta}
-        </span>
+        <div className="flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+          <span className={`text-xs font-medium ${metric.delta.startsWith("-") ? "text-red-400" : "text-emerald-400"}`}>
+            {metric.delta}
+          </span>
+        </div>
       </div>
-      <p className="mt-2 text-4xl font-semibold text-slate-100">{metric.value}</p>
-      {metric.meta ? <p className="mt-2 text-base text-violet-400">{metric.meta}</p> : null}
+      <p className="mt-2.5 text-3xl font-semibold text-slate-100">{metric.value}</p>
+      {metric.meta ? <p className="mt-1.5 text-xs text-violet-400">{metric.meta}</p> : null}
     </article>
   );
 }
@@ -49,10 +52,10 @@ export default function DashboardSidebar({ liveMetrics, userName, userRole }) {
           <button
             key={item.label}
             type="button"
-            className={`${navItemClass} bg-[#030712] text-slate-50`}
+            className={`${navItemClass} border-l-2 border-l-blue-500 bg-blue-500/10 text-slate-50`}
             aria-current={item.active ? "page" : undefined}
           >
-            <item.icon className="h-5 w-5" />
+            <item.icon className="h-5 w-5 text-blue-400" />
             <span>{item.label}</span>
           </button>
         ))}
@@ -84,13 +87,13 @@ export default function DashboardSidebar({ liveMetrics, userName, userRole }) {
           ))}
         </div>
 
-        <div className="mt-4 flex items-center gap-3 rounded-2xl border border-[#475e8859] bg-[#101e3a80] p-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[radial-gradient(circle_at_25%_25%,#4c9dff_3%,#6651ff_50%,#7f2ee8_100%)] text-white">
+        <div className="mt-4 flex items-center gap-3 rounded-2xl border border-[#475e8859] bg-[#101e3a80] p-3 shadow-[0_0_20px_rgba(99,102,241,0.08)] transition hover:border-[#475e8899]">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[radial-gradient(circle_at_25%_25%,#4c9dff_3%,#6651ff_50%,#7f2ee8_100%)] text-white shadow-[0_0_12px_rgba(102,81,255,0.4)]">
             <UserIcon className="h-5 w-5" />
           </span>
           <div>
-            <p className="text-xl leading-none text-slate-100">{userName}</p>
-            <p className="mt-1 text-base text-slate-400">{userRole}</p>
+            <p className="text-sm font-medium leading-none text-slate-100">{userName}</p>
+            <p className="mt-1 text-xs text-slate-400">{userRole}</p>
           </div>
         </div>
       </div>

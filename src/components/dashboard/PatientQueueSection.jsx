@@ -35,14 +35,19 @@ function QueueCard({ patient }) {
 export default function PatientQueueSection({ patients }) {
   return (
     <section className="rounded-2xl border border-[#43608f70] bg-[#090f1d] p-5 sm:p-6">
-      <div className="mb-5 flex items-center gap-4">
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/50 bg-black/20 text-white">
-          <UsersIcon className="h-6 w-6" />
-        </span>
-        <div>
-          <h2 className="text-3xl font-semibold text-slate-100">Patient Queue</h2>
-          <p className="text-base text-slate-500">6 patients waiting</p>
+      <div className="mb-5 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/50 bg-black/20 text-white">
+            <UsersIcon className="h-6 w-6" />
+          </span>
+          <div>
+            <h2 className="text-2xl font-semibold text-slate-100">Patient Queue</h2>
+            <p className="text-sm text-slate-500">{patients.length} patients waiting</p>
+          </div>
         </div>
+        <span className="rounded-full border border-[#ff5a7761] bg-[#7e102820] px-3 py-1 text-xs font-medium text-[#ff5a77]">
+          {patients.filter((p) => p.priority === "high").length} critical
+        </span>
       </div>
 
       <div className="space-y-3">
