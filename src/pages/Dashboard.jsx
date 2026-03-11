@@ -1,7 +1,6 @@
 function Dashboard() {
 
     const getToken = localStorage.getItem("token");
-    console.log(getToken);
 
     if (!getToken) {
         window.location.href = "/";

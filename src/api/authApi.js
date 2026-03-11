@@ -37,11 +37,6 @@ export const userLogin = async (phoneNumber, hospitalId, password) => {
         }
 
         const data = await response.json();
-        
-        if (data.Token){
-            localStorage.setItem("token", data.Token);
-        }
-
         return data;
     } catch (error) {
         console.log("Login error: ", error);

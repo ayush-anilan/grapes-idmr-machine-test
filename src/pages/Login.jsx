@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { preLoginAuthentication, userLogin } from "../api/authApi";
 import { useNavigate } from "react-router";
+import Logo from "../assets/grapeslogo.png";
 
 function Login() {
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -48,12 +49,20 @@ function Login() {
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Login</h2>
-                <form onSubmit={handleLogin} className="flex flex-col gap-4">
+        <div className="  bg-[#f4f3fe]  ">
+            <div className="flex items-center justify-center container mx-auto px-4 min-h-screen">
+                <div className="w-1/2">
+                <img src={Logo} alt="Logo" />
+
+                <div>
+                    <h1 className="text-3xl text-center font-bold text-gray-600 mb-4">Welcome, to Grapes HMS</h1>
+                </div>
+            </div>
+            <div className="bg-[#9d8bf7] p-8 rounded-md shadow-md w-1/2 h-fit mx-52">
+                <h2 className="text-2xl font-semibold text-white mb-6 ">Login</h2>
+                <form onSubmit={handleLogin} className="flex flex-col gap-4 text-white">
                     <div className="flex flex-col gap-1">
-                        <label htmlFor="phoneNumber" className="text-sm font-medium text-gray-600">Phone Number</label>
+                        <label htmlFor="phoneNumber" className="text-sm font-medium ">Phone Number</label>
                         <input
                             type="text"
                             id="phoneNumber"
@@ -65,20 +74,20 @@ function Login() {
                                 setPhoneNumber(val);
                                 if (val.length === 10) getHospitalList(val);
                             }}
-                            className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="border border-gray-300 text-gray-500 rounded-lg px-3 py-2 text-sm focus:outline-none bg-white focus:ring-2 focus:ring-blue-500"
                         />
                         {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
                     </div>
 
                     <div className="flex flex-col gap-1">
-                        <label className="text-sm font-medium text-gray-600">Hospital</label>
+                        <label className="text-sm font-medium">Hospital</label>
                         <select
                             name="hospitalId"
                             required
                             disabled={hospitalList.length === 0}
-                            className="border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100 disabled:text-gray-400"
+                            className="border bg-white border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100 disabled:text-gray-400"
                         >
-                            <option value="">Select Hospital</option>
+                            <option value="bg-white ">Select Hospital</option>
                             {hospitalList.map((hospital) => (
                                 <option className="" key={hospital.hospital_id} value={hospital.hospital_id}>
                                     {hospital.hospital_name}
@@ -88,7 +97,7 @@ function Login() {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                        <label htmlFor="password" className="text-sm font-medium text-gray-600">Password</label>
+                        <label htmlFor="password" className="text-sm font-medium ">Password</label>
                         <input
                             type="password"
                             id="password"
@@ -100,13 +109,18 @@ function Login() {
 
                     <button
                         type="submit"
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg text-sm transition-colors"
+                        className="bg-[#6d3cea] hover:bg-[#5a31c0] text-white font-medium py-2 rounded-lg text-sm transition-colors"
                         disabled={loading}
                     >
-                        Login
+                        Log in
                     </button>
                 </form>
+                <div className="h-64">
+                            <h1 className="hidden">For height</h1>
+                </div>
             </div>
+            </div>
+            
         </div>
     );
 }
